@@ -1,0 +1,47 @@
+print "hello world";
+
+fun omg(a, b) {
+    if (a > b) {
+        return a - b;
+    }
+    else {
+        return a + b;
+    }
+}
+
+class Car {
+
+    init(){
+    var power = false;
+    var speed; var wheels = 4;
+    }
+    
+
+    start() {
+        print "car is starting";
+        power = true;
+    }
+
+    accel() {
+        if (this.power) {
+            speed = speed + 10;
+            print "car's speed is at " + speed;
+        }
+    }
+
+    get_speed() {
+        print speed;
+    }
+}
+var i = omg(4, 4);
+print i;
+
+var BMW = Car();
+print BMW;
+
+// notes
+// indentation does not seem to be matter
+// - could lead to messy code
+// - is not rlly a problem due to scoping + statements using ;
+// field attributes of classes cannot be stated outside of init before initiaising
+// -  
