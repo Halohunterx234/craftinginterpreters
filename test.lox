@@ -19,18 +19,20 @@ class Car {
 
     start() {
         print "car is starting";
-        power = true;
+        this.power = true;
+        this.speed = 0;
     }
 
     accel() {
         if (this.power) {
-            speed = speed + 10;
-            print "car's speed is at " + speed;
+            this.speed = this.speed + 10;
+            print "car's speed is at ";
+            print this.speed;
         }
     }
 
     get_speed() {
-        print speed;
+        return this.speed;
     }
 }
 var i = omg(4, 4);
@@ -38,10 +40,26 @@ print i;
 
 var BMW = Car();
 print BMW;
+BMW.start();
+print BMW.speed;
+BMW.accel();
 
-// notes
+BMW.hi = "";
+fun hi2() {
+    print "hi2";
+}
+BMW.hi2 = hi2;
+BMW.hi2();
+
+// notes / thoughts on semantics designs
 // indentation does not seem to be matter
 // - could lead to messy code
 // - is not rlly a problem due to scoping + statements using ;
-// field attributes of classes cannot be stated outside of init before initiaising
-// -  
+// field attributes of classes cannot be added outside of init before initiaising but can after being initiaised
+// as well as new methods
+// - strictly ? keep all initial attributes within init, including super()
+// no type casting or implicit type conversion
+// - type casting should be implemented
+// - implicit conversion may make errors more ambigious, therefore greater need for type casting
+// why implement closures
+// - pretty integral in many languages nowadays? allow for writing more compact code
